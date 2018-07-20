@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+    <script src="./multi-step-modal-master/multi-step-modal.js"></script>
+    <script src="./keelia/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./keelia/jquery/jquery.min copy.js"></script>
+<body>
+        <form class="modal multi-step" id="demo-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title step-1" data-step="1">Step 1</h4>
+                            <h4 class="modal-title step-2" data-step="2">Step 2</h4>
+                        </div>
+                        <div class="modal-body step step-1">
+                        This is step 1.
+                        </div>
+                        <div class="modal-body step step-2">
+                        This is step 2.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary step step-1" data-step="1" onclick="sendEvent()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-default" data-toggle="modal" data-target="#demo-modal">Show</button>
+            <script src="/path/to/multi-step-modal.js"></script>
+            <script>
+            sendEvent = function() {
+                $('#demo-modal').trigger('next.m.2');
+            }
+            </script>
+</body>
